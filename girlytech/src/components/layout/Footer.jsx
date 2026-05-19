@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Cpu, Heart, Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
+import { Heart, Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
 
 const cols = {
   'Get Involved': [
@@ -15,10 +15,10 @@ const cols = {
     { label: 'Blog',      to: '/blog' },
   ],
   'Support': [
-    { label: 'Contact Us',    to: '/contact' },
-    { label: 'Donate',        to: '/donate' },
-    { label: 'FAQ',           to: '/contact' },
-    { label: 'Privacy Policy',to: '/contact' },
+    { label: 'Contact Us',     to: '/contact' },
+    { label: 'Donate',         to: '/donate' },
+    { label: 'FAQ',            to: '/contact' },
+    { label: 'Privacy Policy', to: '/contact' },
   ],
 }
 
@@ -38,18 +38,18 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-pink-400 mb-1">Stay Connected</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-1">Stay Connected</p>
               <h3 className="font-display text-2xl font-bold text-white">Get updates in your inbox</h3>
             </div>
             <form className="flex gap-3 w-full md:w-auto" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 md:w-72 px-4 py-3 bg-white/8 border border-white/15 rounded-xl text-white placeholder-white/35 text-sm focus:outline-none focus:border-pink-500 transition-all"
+                className="flex-1 md:w-72 px-4 py-3 bg-white/8 border border-white/15 rounded-xl text-white placeholder-white/35 text-sm focus:outline-none focus:border-blue-500 transition-all"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-pink-600 hover:bg-pink-500 text-white text-sm font-bold rounded-xl flex items-center gap-2 transition-colors flex-shrink-0"
+                className="px-6 py-3 bg-blue-700 hover:bg-blue-600 text-white text-sm font-bold rounded-xl flex items-center gap-2 transition-colors flex-shrink-0"
               >
                 Subscribe <ArrowRight className="w-4 h-4" />
               </button>
@@ -63,13 +63,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2.5 mb-5 w-fit">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-display text-2xl font-bold">
-                Girly<span className="text-pink-400">Tech</span>
-              </span>
+            <Link to="/" className="flex items-center mb-5 w-fit group">
+              <img
+                src="/images/logo.webp"
+                alt="GirlyTech"
+                className="h-14 w-auto transition-opacity group-hover:opacity-85"
+              />
             </Link>
             <p className="text-white/55 text-sm leading-relaxed max-w-xs">
               Empowering girls and young women to pursue careers in STEM through skills, mentorship, and community.
@@ -82,7 +81,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg bg-white/8 hover:bg-pink-600 flex items-center justify-center text-[11px] font-bold transition-all hover:scale-110"
+                  className="w-9 h-9 rounded-lg bg-white/8 hover:bg-blue-700 flex items-center justify-center text-[11px] font-bold transition-all hover:scale-110"
                 >
                   {label}
                 </a>
@@ -91,15 +90,15 @@ export default function Footer() {
 
             <div className="mt-7 space-y-2.5">
               <a href="mailto:hello@girlytech.org" className="flex items-center gap-2.5 text-sm text-white/55 hover:text-white transition-colors">
-                <Mail className="w-4 h-4 text-pink-500 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 hello@girlytech.org
               </a>
               <a href="tel:+264811234567" className="flex items-center gap-2.5 text-sm text-white/55 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 text-pink-500 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 +264 81 123 4567
               </a>
               <span className="flex items-start gap-2.5 text-sm text-white/55">
-                <MapPin className="w-4 h-4 text-pink-500 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
                 123 Independence Ave, Windhoek, Namibia
               </span>
             </div>
@@ -131,7 +130,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/35 text-xs">
             © {new Date().getFullYear()} GirlyTech. All rights reserved.
-            {' '}Made with <Heart className="w-3 h-3 inline text-pink-500 mx-0.5" /> for girls in STEM.
+            {' '}Made with <Heart className="w-3 h-3 inline text-blue-400 mx-0.5" /> for girls in STEM.
           </p>
           <div className="flex gap-5">
             <Link to="/contact" className="text-white/35 hover:text-white/60 text-xs transition-colors">Privacy Policy</Link>

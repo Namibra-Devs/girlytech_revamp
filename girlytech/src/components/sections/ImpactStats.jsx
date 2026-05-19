@@ -1,43 +1,51 @@
-import { Users, Code, Award, MapPin, BookOpen, Heart } from 'lucide-react'
-import SectionHeading from '@components/ui/SectionHeading'
+import { useEffect, useRef } from 'react'
+import { Users, Heart, BookOpen } from 'lucide-react'
+import { useReveal } from '@hooks/useReveal'
 
 const stats = [
-  { icon: Users,    value: '2,500+', label: 'Girls Empowered',       desc: 'Across all our programs' },
-  { icon: Code,     value: '12',     label: 'Active Programs',        desc: 'Running year-round' },
-  { icon: Award,    value: '150+',   label: 'Mentors & Volunteers',   desc: 'Industry professionals' },
-  { icon: MapPin,   value: '8',      label: 'Communities Reached',    desc: 'Across the region' },
-  { icon: BookOpen, value: '95%',    label: 'Program Completion Rate',desc: 'Among enrolled students' },
-  { icon: Heart,    value: '300+',   label: 'Scholarships Awarded',   desc: 'To underserved girls' },
+  { icon: Users,    value: '2,500+', label: 'Girls Empowered',  desc: 'Transforming lives across Namibia and beyond' },
+  { icon: Heart,    value: '300+',   label: 'Scholarships',      desc: 'Removing every financial barrier to tech careers' },
+  { icon: BookOpen, value: '95%',    label: 'Completion Rate',   desc: 'Among all enrolled program participants' },
 ]
 
 export default function ImpactStats() {
+  const revealRef = useReveal()
+  const blobRef   = useRef(null)
+
+  useEffect(() => {
+    let raf
+    const onScroll = () => {
+      if (raf) cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        if (blobRef.current) blobRef.current.style.transform = `translateY(${window.scrollY * -0.07}px)`
+      })
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => { window.removeEventListener('scroll', onScroll); if (raf) cancelAnimationFrame(raf) }
+  }, [])
+
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-navy-950 via-navy-900 to-[#0d1f50] relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-gradient-to-br from-navy-950 via-navy-900 to-[#0d1f50] relative overflow-hidden">
       <div className="absolute inset-0 section-dots opacity-25" />
-      <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-3xl" />
+      <div ref={blobRef} className="absolute right-0 top-0 w-[650px] h-[650px] bg-blue-700/15 rounded-full blur-3xl will-change-transform pointer-events-none" />
+      <div className="absolute left-0 bottom-0 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Our Impact"
-          title="Numbers That Tell Our Story"
-          subtitle="Every number represents a life touched, a dream realized, and a future shaped by opportunity and belief."
-          center
-          light
-          className="mb-16"
-        />
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5">
-          {stats.map(({ icon: Icon, value, label, desc }) => (
+      <div ref={revealRef} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          {stats.map(({ icon: Icon, value, label, desc }, i) => (
             <div
               key={label}
-              className="glass rounded-2xl p-6 lg:p-8 group hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+              data-reveal
+              data-reveal-from="scale"
+              data-reveal-delay={i * 130}
+              className="flex flex-col items-center text-center px-8 lg:px-14 py-12 lg:py-10 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center mb-4 group-hover:bg-pink-500/35 transition-colors">
-                <Icon className="w-5 h-5 text-pink-400" />
+              <div className="w-16 h-16 rounded-2xl bg-blue-700/20 border border-blue-700/30 flex items-center justify-center mb-7 group-hover:bg-blue-700/35 transition-colors">
+                <Icon className="w-8 h-8 text-blue-400" />
               </div>
-              <div className="text-3xl lg:text-4xl font-display font-black text-white">{value}</div>
-              <div className="text-sm font-semibold text-white mt-1">{label}</div>
-              <div className="text-xs text-white/40 mt-0.5">{desc}</div>
+              <div className="text-6xl lg:text-7xl font-display font-black text-white tracking-tight">{value}</div>
+              <div className="text-lg font-bold text-white mt-4">{label}</div>
+              <div className="text-sm text-white/40 mt-2 max-w-xs leading-relaxed">{desc}</div>
             </div>
           ))}
         </div>

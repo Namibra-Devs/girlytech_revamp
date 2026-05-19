@@ -6,8 +6,7 @@ export const testimonials = [
     quote: 'GirlyTech changed my life. I went from thinking tech was not for me to landing my dream job 8 months after completing the Code Her Future bootcamp. The mentors believed in me before I believed in myself.',
     program: 'Code Her Future',
     year: 2024,
-    initials: 'AH',
-    color: '#ec4899',
+    avatar: '/images/member.webp',
   },
   {
     id: 2,
@@ -16,8 +15,7 @@ export const testimonials = [
     quote: 'The Data Science program opened doors I never knew existed. The instructors were incredible and the community of fellow learners kept me motivated when things got tough.',
     program: 'Data Science for Girls',
     year: 2024,
-    initials: 'KD',
-    color: '#2563eb',
+    avatar: '/images/hero1.webp',
   },
   {
     id: 3,
@@ -26,8 +24,7 @@ export const testimonials = [
     quote: 'The Tech Entrepreneurship track gave me the framework to turn my idea into a real company. We just secured our first round of funding — this would not have happened without GirlyTech.',
     program: 'Tech Entrepreneurship',
     year: 2025,
-    initials: 'NK',
-    color: '#7c3aed',
+    avatar: '/images/hero2.webp',
   },
   {
     id: 4,
@@ -36,7 +33,15 @@ export const testimonials = [
     quote: 'As a girl from a rural community, I never imagined a career in cybersecurity. GirlyTech gave me a scholarship, the skills, and the confidence to compete at the highest level.',
     program: 'Cybersecurity Essentials',
     year: 2025,
-    initials: 'SM',
-    color: '#059669',
+    avatar: '/images/hero3.webp',
+  },
+  {
+    id: 5,
+    name: 'Thandeka Moyo',
+    role: 'Mobile Developer at Telecom Namibia',
+    quote: 'I never imagined I would become a developer. The Mobile App Development program gave me not just skills, but a whole new identity. Today I build apps used by thousands of people across Namibia.',
+    program: 'Mobile App Development',
+    year: 2025,
+    avatar: '/images/girlytech.webp',
   },
 ]
