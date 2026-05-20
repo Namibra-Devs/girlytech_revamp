@@ -111,11 +111,11 @@ export default function Navbar() {
                             to={to}
                             className="group/item flex items-start gap-3.5 px-5 py-3.5 hover:bg-navy-50 border-b border-gray-50 last:border-0 transition-colors"
                           >
-                            <div className="w-8 h-8 rounded-lg bg-pink-50 group-hover/item:bg-pink-100 flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors">
-                              <Icon className="w-4 h-4 text-pink-600" />
+                            <div className="w-8 h-8 rounded-lg bg-blue-50 group-hover/item:bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors">
+                              <Icon className="w-4 h-4 text-blue-600" />
                             </div>
                             <div>
-                              <span className="text-sm font-semibold text-navy-950 group-hover/item:text-pink-600 transition-colors block">{label}</span>
+                              <span className="text-sm font-semibold text-navy-950 group-hover/item:text-blue-600 transition-colors block">{label}</span>
                               <span className="text-xs text-gray-400">{desc}</span>
                             </div>
                           </Link>
@@ -194,7 +194,7 @@ export default function Navbar() {
       >
         {/* Top logo strip + close button */}
         <div className="px-6 pt-5 pb-4 border-b border-white/10 flex-shrink-0 flex items-center justify-between">
-          <img src="/images/logo.png" alt="GirlyTech" className="h-8 w-auto" />
+          <img src="/images/logo.webp" alt="GirlyTech" className="h-15 w-auto" />
           <button
             onClick={() => setMobileOpen(false)}
             className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
@@ -214,8 +214,8 @@ export default function Navbar() {
                   onClick={() => setMobileDrop((p) => !p)}
                   className="flex items-center justify-between w-full py-4 border-b border-white/8 group"
                 >
-                  <span className="flex items-center gap-4 text-2xl sm:text-3xl font-display font-bold text-white group-hover:text-pink-400 transition-colors">
-                    <link.icon className="w-6 h-6 text-pink-500 flex-shrink-0" />
+                  <span className="flex items-center gap-4 text-2xl sm:text-3xl font-display font-bold text-white group-hover:text-blue-400 transition-colors">
+                    <link.icon className="w-6 h-6 text-blue-500 flex-shrink-0" />
                     {link.label}
                   </span>
                   <ChevronDown
@@ -233,9 +233,9 @@ export default function Navbar() {
                       <Link
                         key={to}
                         to={to}
-                        className="flex items-center gap-3 py-2.5 text-lg text-white/60 hover:text-pink-400 transition-colors"
+                        className="flex items-center gap-3 py-2.5 text-lg text-white/60 hover:text-blue-400 transition-colors"
                       >
-                        <Icon className="w-4 h-4 flex-shrink-0" />
+                        <Icon className="w-4 h-4 flex-shrink-0 text-blue-500" />
                         {label}
                         <ChevronRight className="w-4 h-4 ml-auto opacity-30" />
                       </Link>
@@ -247,9 +247,9 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="flex items-center gap-4 py-4 border-b border-white/8 text-2xl sm:text-3xl font-display font-bold text-white hover:text-pink-400 transition-colors group"
+                className="flex items-center gap-4 py-4 border-b border-white/8 text-2xl sm:text-3xl font-display font-bold text-white hover:text-blue-400 transition-colors group"
               >
-                <link.icon className="w-6 h-6 text-pink-500 flex-shrink-0 group-hover:text-pink-400 transition-colors" />
+                <link.icon className="w-6 h-6 text-blue-500 flex-shrink-0 group-hover:text-blue-400 transition-colors" />
                 {link.label}
               </Link>
             )
