@@ -23,11 +23,11 @@ const cols = {
 }
 
 const socials = [
-  { label: 'FB',  href: '#' },
-  { label: 'TW',  href: '#' },
-  { label: 'IG',  href: '#' },
-  { label: 'LI',  href: '#' },
-  { label: 'YT',  href: '#' },
+  { label: 'FB', href: 'https://facebook.com/girlytech' },
+  { label: 'TW', href: 'https://twitter.com/girlytech' },
+  { label: 'IG', href: 'https://instagram.com/girlytech' },
+  { label: 'LI', href: 'https://linkedin.com/company/girlytech' },
+  { label: 'YT', href: 'https://youtube.com/@girlytech' },
 ]
 
 export default function Footer() {
@@ -81,6 +81,8 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-white/8 hover:bg-blue-700 flex items-center justify-center text-[11px] font-bold transition-all hover:scale-110"
                 >
                   {label}
@@ -93,13 +95,13 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 hello@girlytech.org
               </a>
-              <a href="tel:+264811234567" className="flex items-center gap-2.5 text-sm text-white/55 hover:text-white transition-colors">
+              <a href="tel:+233201234567" className="flex items-center gap-2.5 text-sm text-white/55 hover:text-white transition-colors">
                 <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                +264 81 123 4567
+                +233 20 123 4567
               </a>
               <span className="flex items-start gap-2.5 text-sm text-white/55">
                 <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                123 Independence Ave, Windhoek, Namibia
+                123 Cantonments Road, Accra, Ghana
               </span>
             </div>
           </div>

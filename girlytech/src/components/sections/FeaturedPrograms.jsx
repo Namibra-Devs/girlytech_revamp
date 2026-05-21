@@ -7,8 +7,6 @@ import Button from '@components/ui/Button'
 import { programs } from '@data/programs'
 import { useReveal } from '@hooks/useReveal'
 
-const heroImages = ['/images/hero1.webp', '/images/hero2.webp', '/images/hero3.webp']
-
 const tagVariant = (tag) => {
   if (tag === 'Free' || tag === 'Scholarship') return 'green'
   if (tag === 'Advanced') return 'navy'
@@ -58,7 +56,7 @@ export default function FeaturedPrograms() {
               {/* Image header */}
               <div className="h-52 relative overflow-hidden">
                 <img
-                  src={heroImages[i % 3]}
+                  src={prog.image}
                   alt={prog.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"

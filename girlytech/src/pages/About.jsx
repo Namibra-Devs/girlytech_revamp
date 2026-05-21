@@ -38,8 +38,8 @@ const stats = [
 ]
 
 const partners = [
-  'MTC Namibia', 'Namibia University of Science & Technology', 'TechNamibia',
-  'FNB Namibia', 'Bank of Namibia', 'Telecom Namibia',
+  'MTN Ghana', 'KNUST', 'Ghana Tech Lab',
+  'Ecobank Ghana', 'Bank of Ghana', 'Vodafone Ghana',
 ]
 
 const socialIcon = { linkedin: Linkedin, facebook: Facebook, twitter: Twitter, instagram: Instagram }
@@ -193,6 +193,8 @@ export default function About() {
                           key={platform}
                           href={href}
                           aria-label={platform}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="w-8 h-8 rounded-lg bg-gray-100 group-hover:bg-white/10 hover:!bg-blue-700 flex items-center justify-center transition-all"
                         >
                           <Icon className="w-3.5 h-3.5 text-gray-500 group-hover:text-white transition-colors" />

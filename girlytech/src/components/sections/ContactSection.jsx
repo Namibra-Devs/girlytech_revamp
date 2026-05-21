@@ -4,8 +4,8 @@ import { useReveal } from '@hooks/useReveal'
 
 const contactInfo = [
   { icon: Mail,   label: 'hello@girlytech.org' },
-  { icon: Phone,  label: '+264 81 123 4567' },
-  { icon: MapPin, label: 'Windhoek, Namibia' },
+  { icon: Phone,  label: '+233 20 123 4567' },
+  { icon: MapPin, label: 'Accra, Ghana' },
 ]
 
 export default function ContactSection() {

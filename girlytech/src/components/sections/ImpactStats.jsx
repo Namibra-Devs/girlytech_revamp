@@ -3,7 +3,7 @@ import { Users, Heart, BookOpen } from 'lucide-react'
 import { useReveal } from '@hooks/useReveal'
 
 const stats = [
-  { icon: Users,    value: '2,500+', label: 'Girls Empowered',  desc: 'Transforming lives across Namibia and beyond' },
+  { icon: Users,    value: '2,500+', label: 'Girls Empowered',  desc: 'Transforming lives across Ghana and beyond' },
   { icon: Heart,    value: '300+',   label: 'Scholarships',      desc: 'Removing every financial barrier to tech careers' },
   { icon: BookOpen, value: '95%',    label: 'Completion Rate',   desc: 'Among all enrolled program participants' },
 ]

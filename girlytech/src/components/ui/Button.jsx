@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const variants = {
   primary:      'bg-navy-950 hover:bg-navy-900 text-white shadow-lg shadow-navy-950/20 hover:shadow-navy-950/40',
-  secondary:    'bg-pink-600 hover:bg-pink-500 text-white shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50',
+  secondary:    'bg-blue-700 hover:bg-blue-600 text-white shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50',
   outline:      'border-2 border-white text-white hover:bg-white hover:text-navy-950',
   'outline-dark': 'border-2 border-navy-950 text-navy-950 hover:bg-navy-950 hover:text-white',
   ghost:        'text-navy-950 hover:bg-navy-50',
