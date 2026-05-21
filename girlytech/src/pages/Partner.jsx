@@ -1,37 +1,29 @@
 import { useState, useCallback } from 'react'
-import { Building2, Handshake, TrendingUp, Globe, Send, CheckCircle, BarChart3, Users, BookOpen, Star } from 'lucide-react'
+import { Rocket, ShieldCheck, Sparkles, Network, Send, BarChart3, Users, BookOpen, Star } from 'lucide-react'
 import PageHero from '@components/ui/PageHero'
 import SectionHeading from '@components/ui/SectionHeading'
 import Toast from '@components/ui/Toast'
 
-const partnerTypes = [
+const whyReasons = [
   {
-    icon: Building2,
-    title: 'Corporate Sponsor',
-    desc: 'Fund scholarships, programs, and bootcamps. Get brand recognition, CSR impact reporting, and employee volunteering opportunities.',
-    commitment: 'From ₵10,000/year',
-    benefits: ['Logo on website & materials', 'Named scholarship program', 'CSR impact report', 'Employee volunteer days', 'Gala table sponsorship'],
+    icon: Rocket,
+    title: 'Access Career-Ready Female Tech Talent',
+    desc: 'Our graduates are trained, motivated, and ready to contribute. Tap into a growing pipeline of developers, analysts, and cybersecurity professionals.',
   },
   {
-    icon: Handshake,
-    title: 'Program Partner',
-    desc: 'Co-design and co-deliver programs with our team. Bring your technical expertise to shape the next generation of developers.',
-    commitment: 'Custom arrangement',
-    benefits: ['Co-branded curriculum', 'Instructor access', 'Graduate recruitment pipeline', 'Joint press releases', 'Impact co-branding'],
+    icon: ShieldCheck,
+    title: 'Measurable CSR Impact',
+    desc: 'Every partnership comes with a dedicated impact report — enrolment numbers, completion rates, and graduate outcomes you can share with your stakeholders.',
   },
   {
-    icon: TrendingUp,
-    title: 'Hiring Partner',
-    desc: 'Access our talent pipeline of trained, career-ready graduates. Post opportunities and connect directly with our community.',
-    commitment: 'From ₵5,000/year',
-    benefits: ['Graduate CV database access', 'Campus recruitment events', 'Internship hosting', 'Job board listing', 'Cohort presentations'],
+    icon: Sparkles,
+    title: 'Shape the Curriculum',
+    desc: 'Bring your industry expertise into the classroom. Co-design modules, host guest sessions, and ensure graduates are solving the problems your sector actually faces.',
   },
   {
-    icon: Globe,
-    title: 'NGO / Academic Partner',
-    desc: 'Collaborate on research, community outreach, and joint funding proposals to maximize our collective impact.',
-    commitment: 'MOU-based',
-    benefits: ['Joint research projects', 'Cross-referral of beneficiaries', 'Co-authored publications', 'Shared funding applications', 'Networking events'],
+    icon: Network,
+    title: 'Reach Communities That Matter',
+    desc: 'We operate across 8 communities in Ghana with trusted community relationships. Your brand reaches audiences that traditional marketing cannot.',
   },
 ]
 
@@ -69,33 +61,48 @@ export default function Partner() {
         subtitle="Join our growing network of organizations committed to gender equity in technology. Together, we reach further."
       />
 
-      {/* ── Partnership types ──────────────────────────── */}
+      {/* ── Why Partner ────────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Partnership Models" title="How We Work Together" center className="mb-14" />
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {partnerTypes.map(({ icon: Icon, title, desc, commitment, benefits }) => (
-              <div key={title} className="group bg-gray-50 hover:bg-navy-950 rounded-3xl p-8 border border-gray-100 hover:border-transparent transition-all duration-300">
-                <div className="flex items-start gap-5 mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-500/20 flex items-center justify-center flex-shrink-0 transition-colors">
-                    <Icon className="w-6 h-6 text-blue-700 group-hover:text-blue-400 transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-navy-950 group-hover:text-white transition-colors">{title}</h3>
-                    <p className="text-xs font-semibold text-blue-700 group-hover:text-blue-400 transition-colors mt-0.5">{commitment}</p>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600 group-hover:text-white/65 leading-relaxed mb-5 transition-colors">{desc}</p>
-                <ul className="space-y-2">
-                  {benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-xs text-gray-500 group-hover:text-white/55 transition-colors">
-                      <CheckCircle className="w-3.5 h-3.5 text-blue-500 group-hover:text-blue-400 flex-shrink-0 transition-colors" /> {b}
-                    </li>
-                  ))}
-                </ul>
+            {/* Image */}
+            <div className="relative rounded-3xl overflow-hidden h-[480px] lg:h-[560px]">
+              <img
+                src="/images/hero1.webp"
+                alt="GirlyTech partnership"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-navy-950/10 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
+                <p className="text-white text-sm font-semibold leading-snug">"Partnering with GirlyTech gave us access to talent and community trust we couldn't build alone."</p>
+                <p className="text-white/60 text-xs mt-2">— MTN Ghana, Corporate Partner</p>
               </div>
-            ))}
+            </div>
+
+            {/* Reasons */}
+            <div>
+              <SectionHeading
+                eyebrow="Why Partner With Us"
+                title="Built for Impact. Backed by Results."
+                subtitle="We make partnerships simple, transparent, and genuinely rewarding — for your organisation and for the girls we serve."
+                className="mb-10"
+              />
+              <div className="space-y-6">
+                {whyReasons.map(({ icon: Icon, title, desc }) => (
+                  <div key={title} className="flex items-start gap-4 group">
+                    <div className="w-11 h-11 rounded-xl bg-blue-50 group-hover:bg-blue-700 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                      <Icon className="w-5 h-5 text-blue-700 group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-navy-950 text-sm mb-1">{title}</h4>
+                      <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -196,7 +203,10 @@ export default function Partner() {
                 className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors"
               >
                 <option value="">Select a type</option>
-                {partnerTypes.map((t) => <option key={t.title}>{t.title}</option>)}
+                <option>Corporate Sponsor</option>
+                <option>Program Partner</option>
+                <option>Hiring Partner</option>
+                <option>NGO / Academic Partner</option>
               </select>
             </div>
             <div>
